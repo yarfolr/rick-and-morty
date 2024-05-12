@@ -13,8 +13,10 @@ const renderCharacters = character => {
 			const { name, image, gender } = character
 			return `
     <li class="character">
-        <p>name: ${name}</p>
-        <p>gender: ${gender}</p>
+		<div class="character__object">
+        <p class="name">Name: ${name} </p>
+        <p class="gender">gender: ${gender}</p>
+				</div>
 				<img class="character_img" src="${image}" alt="${name}">
     </li>
     `
@@ -27,3 +29,5 @@ const renderCharacters = character => {
 fetchUsers()
 	.then(characters => renderCharacters(characters))
 	.catch(error => console.log(error))
+
+
